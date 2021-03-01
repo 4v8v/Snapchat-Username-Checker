@@ -25,12 +25,14 @@ def check(targ, xsrf):
         print(f"{targ} is not available!")
     main()
 
+    
 def main():
     targ = input("name: ")
     qwer = requests.get("https://accounts.snapchat.com/accounts/login")
     xsrf = qwer.cookies.get_dict()["xsrf_token"]
     check(targ, xsrf)
 
+    
 if __name__ == "__main__":
     main()
 
